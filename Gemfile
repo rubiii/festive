@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 
+gem 'slim-rails'
 gem 'jquery-rails'
 
 # Development database (change to Postgres for Heroku)
