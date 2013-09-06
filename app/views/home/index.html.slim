@@ -1,1 +1,22 @@
-p ...
+h1 Berliner und Brandenburger Volks- und Straßenfeste 2013
+
+#events ng-controller='eventsController'
+  #range-slider
+  #range-info
+    span.count
+      | {{events.length}} Veranstaltungen 
+    span
+      | im gewählten Zeitraum
+
+  ol#event-list ng-show='events' ng-cloak=''
+    li.event class="{{ongoingClass(event.ends_at)}}" ng-repeat="event in events"
+      .title
+        | {{event.description}}
+      .subtitle
+        span.period
+          span ng-if='event.starts_at === event.ends_at'
+            | {{event.starts_at | date:'dd.MM.yyyy'}} 
+          span ng-if='event.starts_at !== event.ends_at'
+            | {{event.starts_at | date:'dd.MM.yyyy'}} — {{event.ends_at | date:'dd.MM.yyyy'}} 
+        span.area
+          | in {{event.area}}
