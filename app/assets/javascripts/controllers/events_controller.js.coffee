@@ -1,6 +1,6 @@
 window.app = angular.module('Festive', [])
 
-window.eventsController = ($scope, $http) ->
+window.eventsController = ($scope, $http, safeApply) ->
 
   $scope.events = []
 
@@ -38,13 +38,6 @@ window.eventsController = ($scope, $http) ->
   endMonth = startMonth + 1
   endMonth = 11 if endMonth > 11
 
-  $scope.safeApply = (fn) ->
-    phase = @$root.$$phase
-    if phase is "$apply" or phase is "$digest"
-      fn()  if fn and (typeof (fn) is "function")
-    else
-      @$apply fn
-
   $scope.rangeChanged = (e, rangeStartMonth, rangeEndMonth) ->
     events = _.select $scope.allEvents, (event) ->
       startMonth = new Date(Date.parse(event.starts_at)).getMonth()
@@ -53,7 +46,7 @@ window.eventsController = ($scope, $http) ->
       (startMonth >= rangeStartMonth && startMonth <= rangeEndMonth) ||
       (endMonth >= rangeStartMonth && endMonth <= rangeEndMonth)
 
-    $scope.$apply ->
+    safeApply $scope, ->
       $scope.events = events
 
   $http.get('/events.json').success (data) ->
