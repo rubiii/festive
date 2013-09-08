@@ -43,8 +43,7 @@ window.eventsController = ($scope, $http, safeApply) ->
       startMonth = new Date(Date.parse(event.starts_at)).getMonth()
       endMonth = new Date(Date.parse(event.ends_at)).getMonth()
 
-      (startMonth >= rangeStartMonth && startMonth <= rangeEndMonth) ||
-      (endMonth >= rangeStartMonth && endMonth <= rangeEndMonth)
+      endMonth >= rangeStartMonth and rangeEndMonth >= startMonth
 
     safeApply $scope, ->
       $scope.events = events
