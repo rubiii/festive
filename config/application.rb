@@ -22,5 +22,9 @@ module Festive
 
     # Add bower components to asset path.
     config.assets.paths << Rails.root.join('vendor/components')
+
+    # For some reason, Rails ignores images in vendor/assets/images
+    # http://stackoverflow.com/a/14195512/279024
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
