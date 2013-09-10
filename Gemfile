@@ -8,7 +8,6 @@ gem 'foreman'
 gem 'pg'
 
 gem 'slim-rails'
-gem 'jquery-rails'
 
 # Assets
 gem 'sass-rails', '~> 4.0.0'
