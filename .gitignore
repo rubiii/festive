@@ -1,6 +1,3 @@
-# production
-/bin/nodejs
-
 # sqlite databases
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -11,9 +8,3 @@
 
 # bundler
 /.bundle
-
-# npm
-/node_modules
-
-# bower
-/vendor/components

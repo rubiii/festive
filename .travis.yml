@@ -3,10 +3,7 @@ rvm:
   - 2.0.0
 services:
   - postgresql
-install:
-  - touch ~/do_not_run_bundle
 before_script:
-  - bin/setup
   - PORT=3002 bundle exec foreman start &
 script:
   - bundle exec rake test
