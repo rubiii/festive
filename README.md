@@ -12,6 +12,7 @@ Prerequisites:
 
 * Ruby 2.0 (+Bundler)
 * Node/NPM
+* Postgres
 
 Clone and setup the project:
 
