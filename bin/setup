@@ -1,8 +1,12 @@
-# install ruby dependencies
+echo "=> Installing Bundler dependencies"
 bundle install
 
-# install npm dependencies
+echo "=> Installing NPM dependencies"
 npm install
 
-# install bower dependencies
+echo "=> Installing Bower dependencies"
 bower install
+
+echo "=> Preparing the database"
+bundle exec rake db:create db:migrate
+RAILS_ENV=test bundle exec rake db:create db:migrate
