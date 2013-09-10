@@ -1,9 +1,13 @@
-# bundler
-/.bundle
+# sqlite databases
+/db/*.sqlite3
+/db/*.sqlite3-journal
 
 # log and tmp
 /log/*.log
 /tmp
+
+# bundler
+/.bundle
 
 # npm
 /node_modules
