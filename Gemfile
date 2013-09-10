@@ -22,6 +22,9 @@ gem 'puma'
 
 group :test do
   gem 'mocha', require: 'mocha/api'
+  gem 'capybara', require: false
+  gem 'selenium-webdriver', require: false
+  gem 'database_cleaner'
 end
 
 # Heroku needs this

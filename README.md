@@ -45,7 +45,7 @@ This imports or updates all data from the public JSON API.
 
 ## Tests
 
-To run the Ruby tests:
+To run all Ruby and browser tests:
 
 ``` shell
 bundle exec rake test
