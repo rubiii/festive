@@ -5,6 +5,7 @@ services:
   - postgresql
 before_script:
   - PORT=3002 bundle exec foreman start &
+  - sleep 3
 script:
   - bundle exec rake test
   - bundle exec rake karma:ci
