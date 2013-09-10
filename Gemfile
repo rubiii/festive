@@ -25,3 +25,6 @@ gem 'puma'
 group :test do
   gem 'mocha', require: 'mocha/api'
 end
+
+# Heroku needs this
+gem 'rails_12factor', group: :production
