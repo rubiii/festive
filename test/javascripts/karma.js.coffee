@@ -12,7 +12,7 @@ module.exports = (config) ->
 
     # list of files / patterns to load in the browser
     files: [
-      'http://localhost:3002/assets/application.js',
+      'http://localhost:5000/assets/application.js',
       'vendor/components/angular-mocks/index.js',
       'test/javascripts/**/*_spec.js.coffee',
     ]

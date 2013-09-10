@@ -9,7 +9,7 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 before_script:
-  - PORT=3002 bundle exec foreman start &
+  - bundle exec foreman start &
   - sleep 3
 script:
   - bundle exec rake test
