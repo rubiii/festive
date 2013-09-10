@@ -10,10 +10,10 @@ window.app.factory 'Event', ->
       @endsAt = new Date Date.parse(event.ends_at)
 
     isOngoing: ->
-      @startsAt <= @_today <= @endsAt
+      @startsAt <= @_today() <= @endsAt
 
     isUpcoming: ->
-      @_today < @startsAt
+      @_today() < @startsAt
 
     isWithinRange: (rangeStartMonth, rangeEndMonth) ->
       @endsAt.getMonth() >= rangeStartMonth and rangeEndMonth >= @startsAt.getMonth()

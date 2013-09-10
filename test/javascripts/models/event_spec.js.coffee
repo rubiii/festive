@@ -63,5 +63,5 @@ describe 'Event', ->
 
 
   mockToday = (event, date) ->
-    event._today = new Date Date.parse(date)
+    event._today = -> new Date Date.parse(date)
 
