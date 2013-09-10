@@ -8,9 +8,9 @@ h1 Berliner und Brandenburger Volks- und Straßenfeste 2013
     span
       | im gewählten Zeitraum
 
-  div ng-show='groupedEvents.ongoing' ng-cloak=''
+  div class='ongoing-events' ng-show='groupedEvents.ongoing' ng-cloak=''
     h2
-      | {{groupedEvents.ongoing.length}} aktive Veranstaltungen
+      | {{groupedEvents.ongoing.length}} laufende Veranstaltung(en)
     ol.events
       li ng-repeat='event in groupedEvents.ongoing'
         p
@@ -20,9 +20,9 @@ h1 Berliner und Brandenburger Volks- und Straßenfeste 2013
         span
           | in {{event.area}}
 
-  div ng-show='groupedEvents.upcoming' ng-cloak=''
+  div class='upcoming-events' ng-show='groupedEvents.upcoming' ng-cloak=''
     h2
-      | {{groupedEvents.upcoming.length}} anstehende Veranstaltungen
+      | {{groupedEvents.upcoming.length}} anstehende Veranstaltung(en)
     ol.events
       li ng-repeat='event in groupedEvents.upcoming'
         p
@@ -32,9 +32,9 @@ h1 Berliner und Brandenburger Volks- und Straßenfeste 2013
         span
           | in {{event.area}}
 
-  div ng-show='groupedEvents.passed' ng-cloak=''
+  div class='passed-events' ng-show='groupedEvents.passed' ng-cloak=''
     h2
-      | {{groupedEvents.passed.length}} abgelaufene Veranstaltungen
+      | {{groupedEvents.passed.length}} vergangene Veranstaltung(en)
     ol.events
       li ng-repeat='event in groupedEvents.passed'
         p

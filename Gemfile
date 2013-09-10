@@ -24,7 +24,7 @@ group :test do
   gem 'mocha', require: 'mocha/api'
   gem 'capybara', require: false
   gem 'selenium-webdriver', require: false
-  gem 'database_cleaner'
+  gem 'database_cleaner', require: false
 end
 
 # Heroku needs this
