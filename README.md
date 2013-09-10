@@ -1,5 +1,7 @@
 # Festive
 
+[![Build Status](https://secure.travis-ci.org/rubiii/festive.png)](http://travis-ci.org/rubiii/festive)
+
 Sample application for importing and displaying the
 "[Berliner und Brandenburger Volks- und Straßenfeste 2013](http://daten.berlin.de/datensaetze/berliner-und-brandenburger-volks-und-stra%C3%9Fenfeste-2013)" (fairs and festivals in Berlin and Brandenburg, Germany).
 

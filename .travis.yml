@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.0.0
+before_script:
+  - bin/setup
+script:
+  - bundle exec rake test
+  - bundle exec rake karma:ci
