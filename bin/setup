@@ -3,11 +3,8 @@ set -e
 echo "=> Installing Bundler dependencies"
 bundle install
 
-echo "=> Installing NPM dependencies"
+echo "=> Installing NPM and Bower dependencies"
 npm install
-
-echo "=> Installing Bower dependencies"
-bower install
 
 echo "=> Preparing the database"
 bundle exec rake db:create db:migrate

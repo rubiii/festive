@@ -15,5 +15,8 @@
     "karma": "0.10.2",
     "karma-mocha": "0.1.0",
     "karma-chai": "0.0.1"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install"
   }
 }
