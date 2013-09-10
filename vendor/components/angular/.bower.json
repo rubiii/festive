@@ -1,0 +1,12 @@
+{
+  "name": "angular",
+  "_cacheHeaders": {
+    "Last-Modified": "Wed, 04 Sep 2013 12:57:30 GMT",
+    "Content-Length": "628314",
+    "Content-Type": "application/x-javascript"
+  },
+  "main": "index.js",
+  "_source": "http://code.angularjs.org/1.2.0-rc.2/angular.js",
+  "_target": "*",
+  "_originalSource": "http://code.angularjs.org/1.2.0-rc.2/angular.js"
+}
