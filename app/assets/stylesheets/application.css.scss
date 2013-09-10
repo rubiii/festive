@@ -19,6 +19,15 @@ h1 {
   margin-bottom: 64px;
 }
 
+h2 {
+  font: 48px/64px georgia,times,serif;
+  margin: 96px 0 16px 0;
+
+  &:first-child {
+    margin-top: 128px;
+  }
+}
+
 #content {
   margin: 64px auto 32px auto;
   width: 960px;
@@ -26,11 +35,11 @@ h1 {
 
 #footer {
   font: italic 14px/20px georgia,times,serif;
-  color: #ccc;
+  color: #bbb;
   margin-top: 96px;
 
   a {
-    color: #ccc;
+    color: #bbb;
 
     &:hover {
       color: #d89c00;
@@ -43,8 +52,8 @@ h1 {
   padding-bottom: 32px;
 }
 
-#range-info {
-  color: #ccc;
+.range-info {
+  color: #bbb;
   float: right;
   margin: 32px 60px 0 0;
 
@@ -53,71 +62,29 @@ h1 {
   }
 }
 
-#event-list {
+.events {
   list-style: none;
-  margin: 64px 0 0 4px;
-}
 
-.event {
-  padding: 58px 0 24px 0;
-  border-bottom: 1px solid #eee;
-  width: 900px;
+  li {
+    padding: 48px 0 16px 0;
+    border-bottom: 1px solid #eee;
+    width: 900px;
 
-  .title {
-    font-size: 30px;
-    line-height: 36px;
-    margin-bottom: 5px;
-  }
+    p {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
 
-  .subtitle {
-    font: italic 18px/24px georgia,times,serif;
+    time, span {
+      font: italic 18px/24px georgia,times,serif;
+    }
 
-    .period {
+    time {
       color: #d89c00;
     }
 
-    .area {
-      color: #ccc;
-    }
-  }
-
-  &.outdated {
-    color: #eee;
-
-    .title {
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      line-height: 16px;
-
-      .period, .area {
-        color: #eee;
-      }
-    }
-
-    &:hover {
-      .title {
-        color: #333;
-      }
-
-      .subtitle {
-        .period {
-          color: #d89c00;
-        }
-
-        .area {
-        color: #ccc;
-        }
-      }
-    }
-  }
-
-  &:hover {
-    .title {
-      color: #d89c00;
+    span {
+      color: #bbb;
     }
   }
 }

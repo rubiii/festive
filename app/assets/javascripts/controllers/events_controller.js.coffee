@@ -1,17 +1,9 @@
 window.app = angular.module('Festive', [])
 
-window.eventsController = ($scope, $http, safeApply) ->
+window.eventsController = ($scope, $http, safeApply, eventService) ->
 
-  $scope.events = []
-
-  $scope.ongoingClass = (endsAt) ->
-    endsAt = new Date(Date.parse(endsAt))
-    today = new Date()
-
-    if today <= endsAt then 'ongoing' else 'outdated'
-
-  $scope.sameDay = (date, otherDate) ->
-    date == otherDate
+  $scope.groupedEvents = {}
+  $scope.groupedEventsCount = 0
 
   sliderData = [
     { text: 'Jan', date: new Date('2013-01-01') }
@@ -26,11 +18,12 @@ window.eventsController = ($scope, $http, safeApply) ->
     { text: 'Okt', date: new Date('2013-10-01') }
     { text: 'Nov', date: new Date('2013-11-01') }
     { text: 'Dez', date: new Date('2013-12-01') }
+    { text: 'Jan', date: new Date('2014-01-01') }
   ]
 
   slider = new Razorfish.Slider
     width: 890
-    handleWidth: 12
+    handleWidth: 13
     useRange: true
     tabs: sliderData
 
@@ -38,15 +31,12 @@ window.eventsController = ($scope, $http, safeApply) ->
   endMonth = startMonth + 1
   endMonth = 11 if endMonth > 11
 
-  $scope.rangeChanged = (e, rangeStartMonth, rangeEndMonth) ->
-    events = _.select $scope.allEvents, (event) ->
-      startMonth = new Date(Date.parse(event.starts_at)).getMonth()
-      endMonth = new Date(Date.parse(event.ends_at)).getMonth()
-
-      endMonth >= rangeStartMonth and rangeEndMonth >= startMonth
+  rangeChanged = (e, rangeStartMonth, rangeEndMonth) ->
+    groupedEvents = eventService.group($scope.allEvents, rangeStartMonth, rangeEndMonth)
 
     safeApply $scope, ->
-      $scope.events = events
+      $scope.groupedEvents = groupedEvents
+      $scope.groupedEventsCount = eventService.countGrouped(groupedEvents)
 
   $http.get('/events.json').success (data) ->
     $scope.allEvents = data;
@@ -54,5 +44,5 @@ window.eventsController = ($scope, $http, safeApply) ->
     slider
       .appendTo('#range-slider')
       .setRange(startMonth, endMonth)
-      .bind('change', $scope.rangeChanged)
+      .bind('change', rangeChanged)
       .triggerChange()

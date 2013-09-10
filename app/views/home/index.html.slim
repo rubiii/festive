@@ -2,21 +2,44 @@ h1 Berliner und Brandenburger Volks- und Straßenfeste 2013
 
 #events ng-controller='eventsController'
   #range-slider
-  #range-info
+  .range-info
     span.count
-      | {{events.length}} Veranstaltungen 
+      | {{groupedEventsCount}} Veranstaltungen 
     span
       | im gewählten Zeitraum
 
-  ol#event-list ng-show='events' ng-cloak=''
-    li.event class="{{ongoingClass(event.ends_at)}}" ng-repeat="event in events"
-      .title
-        | {{event.description}}
-      .subtitle
-        span.period
-          span ng-if='event.starts_at === event.ends_at'
-            | {{event.starts_at | date:'dd.MM.yyyy'}} 
-          span ng-if='event.starts_at !== event.ends_at'
-            | {{event.starts_at | date:'dd.MM.yyyy'}} — {{event.ends_at | date:'dd.MM.yyyy'}} 
-        span.area
+  div ng-show='groupedEvents.ongoing' ng-cloak=''
+    h2
+      | {{groupedEvents.ongoing.length}} aktive Veranstaltungen
+    ol.events
+      li ng-repeat='event in groupedEvents.ongoing'
+        p
+          | {{event.description}}
+        time
+          | {{event.startsAt | date:'dd.MM.yyyy'}} — {{event.endsAt | date:'dd.MM.yyyy'}} 
+        span
+          | in {{event.area}}
+
+  div ng-show='groupedEvents.upcoming' ng-cloak=''
+    h2
+      | {{groupedEvents.upcoming.length}} anstehende Veranstaltungen
+    ol.events
+      li ng-repeat='event in groupedEvents.upcoming'
+        p
+          | {{event.description}}
+        time
+          | {{event.startsAt | date:'dd.MM.yyyy'}} — {{event.endsAt | date:'dd.MM.yyyy'}} 
+        span
+          | in {{event.area}}
+
+  div ng-show='groupedEvents.passed' ng-cloak=''
+    h2
+      | {{groupedEvents.passed.length}} abgelaufene Veranstaltungen
+    ol.events
+      li ng-repeat='event in groupedEvents.passed'
+        p
+          | {{event.description}}
+        time
+          | {{event.startsAt | date:'dd.MM.yyyy'}} — {{event.endsAt | date:'dd.MM.yyyy'}} 
+        span
           | in {{event.area}}
