@@ -1,3 +1,5 @@
+set -e
+
 echo "=> Installing Bundler dependencies"
 bundle install
 
