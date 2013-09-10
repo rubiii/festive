@@ -1,0 +1,19 @@
+{
+  "name": "festive",
+  "version": "0.1.0",
+  "description": "simple events app",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rubiii/festive.git"
+  },
+  "author": "Daniel Harrington",
+  "license": "BSD",
+  "dependencies": {
+    "bower": "1.2.6",
+    "karma": "0.10.2",
+    "karma-mocha": "0.1.0",
+    "karma-chai": "0.0.1"
+  }
+}

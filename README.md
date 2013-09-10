@@ -8,15 +8,15 @@ Sample application for importing and displaying the
 
 Prerequisites:
 
-* Ruby 2.0
+* Ruby 2.0 (+Bundler)
+* Node/NPM
 
-Clone and install dependencies to get started:
+Clone and setup the project:
 
 ``` shell
 git clone git@github.com:rubiii/festive.git
 cd festive
-gem install bundler
-bundle install
+bin/setup
 ```
 
 
@@ -38,3 +38,18 @@ bundle exec rake workers:import
 ```
 
 This imports or updates all data from the public JSON API.
+
+
+## Tests
+
+To run the Ruby tests:
+
+``` shell
+bundle exec rake test
+```
+
+JavaScript tests are running on Karma:
+
+``` shell
+bundle exec rake karma
+```

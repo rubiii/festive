@@ -10,3 +10,8 @@ namespace :test do
 end
 
 Rake::Task[:test].enhance { Rake::Task['test:workers'].invoke }
+
+desc "Test JavaScript source"
+task :karma do
+  system 'node_modules/.bin/karma start test/javascripts/karma.js.coffee'
+end

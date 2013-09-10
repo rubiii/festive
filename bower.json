@@ -1,0 +1,10 @@
+{
+  "name": "festive",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "1.9.1",
+    "underscore": "1.4.3",
+    "angular": "http://code.angularjs.org/1.2.0-rc.2/angular.js",
+    "angular-mocks": "http://code.angularjs.org/1.2.0-rc.2/angular-mocks.js"
+  }
+}
