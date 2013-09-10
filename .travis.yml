@@ -3,6 +3,8 @@ rvm:
   - 2.0.0
 services:
   - postgres
+install:
+  - touch ~/do_not_run_bundle
 before_script:
   - bin/setup
 script:
