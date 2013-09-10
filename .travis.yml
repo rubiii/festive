@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.0.0
+env:
+  - PHANTOMJS_BIN=phantomjs
 services:
   - postgresql
 before_install:
