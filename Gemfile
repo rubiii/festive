@@ -10,9 +10,6 @@ gem 'pg'
 gem 'slim-rails'
 gem 'jquery-rails'
 
-# Development database (change to Postgres for Heroku)
-gem 'sqlite3'
-
 # Assets
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
